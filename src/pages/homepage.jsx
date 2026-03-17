@@ -26,7 +26,7 @@ export default function Homepage() {
             <div className="col-md-4 mb-4">
               <div className="card h-100">
                 <img
-                  className="card-img-top"
+                  className="card-img-top h-100"
                   src={`http://localhost:3000/img/movies_cover/${movie.image}`}
                   alt={movie.title}
                 />

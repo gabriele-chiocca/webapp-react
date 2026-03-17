@@ -29,10 +29,24 @@ export default function MovieDetailPage() {
         <img
           src={`http://localhost:3000/img/movies_cover/${movie.image}`}
           alt={movie.title}
-          className="img-fluid mb-4"
+          className="img-fluid mb-4 w-25"
         />
 
-        <p>Director:{movie.director}</p>
+        <p>
+          <strong>Director: </strong>
+          {movie.director}
+        </p>
+        <p>
+          <strong>Data di uscita: </strong> {movie.release_year}
+        </p>
+        <p>
+          <strong>Genere: </strong>
+          {movie.genre}
+        </p>
+        <p>
+          <strong>Summary: </strong>
+          {movie.genre}
+        </p>
       </div>
     </>
   );
