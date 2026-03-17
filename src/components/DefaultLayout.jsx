@@ -6,7 +6,7 @@ export default function DefaultLayout() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink to={Homepage} className="navbar-brand">
+        <NavLink to={'/'} className="navbar-brand">
           Navbar
         </NavLink>
         <button
@@ -24,7 +24,7 @@ export default function DefaultLayout() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <NavLink to={Homepage} className="nav-link">
+              <NavLink to={'/'} className="nav-link">
                 Home
               </NavLink>
             </li>
