@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 export default function DefaultLayout() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink to={'/'} className="navbar-brand">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <NavLink to={'/'} className="navbar-brand mx-4">
           Navbar
         </NavLink>
         <button
@@ -26,11 +26,6 @@ export default function DefaultLayout() {
               <NavLink to={'/'} className="nav-link">
                 Home
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
             </li>
           </ul>
         </div>
