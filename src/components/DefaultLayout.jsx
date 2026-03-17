@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import Homepage from '../pages/homepage';
 
 export default function DefaultLayout() {
   return (
@@ -10,7 +9,7 @@ export default function DefaultLayout() {
           Navbar
         </NavLink>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
