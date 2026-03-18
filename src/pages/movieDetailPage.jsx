@@ -24,29 +24,53 @@ export default function MovieDetailPage() {
   return (
     <>
       <div className="container py-4">
-        <h1 className="mt-4">{movie.title}</h1>
-
-        <img
-          src={`http://localhost:3000/img/movies_cover/${movie.image}`}
-          alt={movie.title}
-          className="img-fluid mb-4 w-25"
-        />
-
-        <p>
-          <strong>Director: </strong>
-          {movie.director}
-        </p>
-        <p>
-          <strong>Data di uscita: </strong> {movie.release_year}
-        </p>
-        <p>
-          <strong>Genere: </strong>
-          {movie.genre}
-        </p>
-        <p>
-          <strong>Summary: </strong>
-          {movie.genre}
-        </p>
+        <div className="row">
+          <div className="col-4">
+            <img
+              src={`http://localhost:3000/img/movies_cover/${movie.image}`}
+              alt={movie.title}
+              className="img-fluid w-100"
+            />
+          </div>
+          <div className="col-8">
+            <h1>{movie.title}</h1>
+            <p className="mt-4">
+              <strong>Director: </strong>
+              {movie.director}
+            </p>
+            <p>
+              <strong>Data di uscita: </strong> {movie.release_year}
+            </p>
+            <p>
+              <strong>Genere: </strong>
+              {movie.genre}
+            </p>
+            <p>
+              <strong>Summary: </strong>
+              {movie.abstract}
+            </p>
+            <div>
+              <h3>Reviews</h3>
+              {movie.reviews.length > 0 ? (
+                movie.reviews.map((review) => (
+                  <div key={review.id} className="border-bottom p-3 mb-3">
+                    <p className="mb-1">
+                      <strong> Nome:</strong> {review.name}
+                    </p>
+                    <p className="mb-1">
+                      <strong> Voto:</strong> {review.vote}
+                    </p>
+                    <p className="mb-1">
+                      <strong> Descrizione:</strong> {review.text}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <p>Nessuna recensione</p>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
