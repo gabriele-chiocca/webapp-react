@@ -2,6 +2,18 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+function renderStars(vote) {
+  const stars = [];
+  for (let i = 0; i <= 5; i++) {
+    if (i <= vote) {
+      stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>);
+    } else {
+      stars.push(<i key={i} className="bi bi-star text-secondary"></i>);
+    }
+  }
+  return stars;
+}
+
 export default function MovieDetailPage() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -58,7 +70,7 @@ export default function MovieDetailPage() {
                       <strong> Nome:</strong> {review.name}
                     </p>
                     <p className="mb-1">
-                      <strong> Voto:</strong> {review.vote}
+                      <strong> Voto:</strong> {renderStars(review.vote)}
                     </p>
                     <p className="mb-1">
                       <strong> Descrizione:</strong> {review.text}
