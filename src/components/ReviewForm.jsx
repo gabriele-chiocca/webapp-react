@@ -5,9 +5,14 @@ export default function ReviewForm({ movieId, fetchFilm }) {
   const [vote, setVote] = useState('');
   const [text, setText] = useState('');
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log({ name, vote, text });
+  }
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Nome</label>
           <input
@@ -40,6 +45,10 @@ export default function ReviewForm({ movieId, fetchFilm }) {
         <button type="submit" className="btn btn-primary">
           Invia
         </button>
+
+        <p> Nome {name}</p>
+        <p>V {vote}</p>
+        <p>De {text}</p>
       </form>
     </>
   );
