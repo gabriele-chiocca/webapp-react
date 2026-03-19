@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 export default function ReviewForm({ movieId, fetchFilm }) {
   const [name, setName] = useState('');
@@ -7,7 +8,23 @@ export default function ReviewForm({ movieId, fetchFilm }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log({ name, vote, text });
+    axios
+      .post(`http://localhost:3000/movies/${movieId}/reviews`, {
+        name,
+        vote,
+        text,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setName('');
+        setVote('');
+        setText('');
+
+        fetchFilm();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   return (
