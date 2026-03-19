@@ -62,10 +62,6 @@ export default function ReviewForm({ movieId, fetchFilm }) {
         <button type="submit" className="btn btn-primary">
           Invia
         </button>
-
-        <p> Nome {name}</p>
-        <p>V {vote}</p>
-        <p>De {text}</p>
       </form>
     </>
   );

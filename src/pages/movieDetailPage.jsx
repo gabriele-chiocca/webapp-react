@@ -19,7 +19,7 @@ export default function MovieDetailPage() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
-  useEffect(() => {
+  function fetchFilm() {
     axios
       .get(`http://localhost:3000/movies/${id}`)
       .then((res) => {
@@ -28,6 +28,10 @@ export default function MovieDetailPage() {
       .catch((err) => {
         console.error(err);
       });
+  }
+
+  useEffect(() => {
+    fetchFilm();
   }, [id]);
 
   if (!movie) {
@@ -87,7 +91,7 @@ export default function MovieDetailPage() {
 
         <div className="row">
           <div>
-            <ReviewForm></ReviewForm>
+            <ReviewForm movieId={id} fetchFilm={fetchFilm}></ReviewForm>
           </div>
         </div>
       </div>
