@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ReviewForm from '../components/ReviewForm';
 
 function renderStars(vote) {
   const stars = [];
@@ -81,6 +82,12 @@ export default function MovieDetailPage() {
                 <p>Nessuna recensione</p>
               )}
             </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div>
+            <ReviewForm></ReviewForm>
           </div>
         </div>
       </div>
