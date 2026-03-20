@@ -30,6 +30,7 @@ export default function ReviewForm({ movieId, fetchFilm }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <h1 className="mb-3">Aggiungi una recensione</h1>
         <div className="mb-3">
           <label className="form-label">Nome</label>
           <input
