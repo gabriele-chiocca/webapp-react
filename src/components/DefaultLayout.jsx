@@ -1,9 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { LoaderContext } from '../contexts/LoaderContext';
+import Loader from './Loader';
+import { useContext } from 'react';
 
 export default function DefaultLayout() {
+  const { isLoading } = useContext(LoaderContext);
   return (
     <>
+      {isLoading && <Loader />}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <NavLink to={'/'} className="navbar-brand mx-4">
           Navbar
